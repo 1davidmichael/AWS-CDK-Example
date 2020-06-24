@@ -1,4 +1,4 @@
-import { expect as expectCDK, matchTemplate, MatchStyle } from '@aws-cdk/assert';
+import { expect as expectCDK, MatchStyle, matchTemplate } from '@aws-cdk/assert';
 import * as cdk from '@aws-cdk/core';
 import * as ExampleLambda from '../lib/example_lambda-stack';
 
@@ -9,5 +9,5 @@ test('Empty Stack', () => {
     // THEN
     expectCDK(stack).to(matchTemplate({
       "Resources": {}
-    }, MatchStyle.EXACT))
+    }, MatchStyle.SUPERSET))
 });

@@ -10,7 +10,7 @@ Usage:
 ```
 npm install -g aws-cdk
 npm install
-cdk synth && cdk deploy
+npm test && cdk synth && cdk deploy
 ```
 
 [serverless_example]: https://docs.aws.amazon.com/cdk/latest/guide/serverless_example.html
