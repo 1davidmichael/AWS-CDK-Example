@@ -12,14 +12,20 @@ export class WidgetService extends core.Construct {
 
     const snsTopic = new sns.Topic(this, "Topic");
 
-    snsTopic.addSubscription(
-        new subscriptions.EmailSubscription(
-            '1.david.michael@gmail.com'
-        )
-    )
+    let emails = [
+      "1.david.michael+0@gmail.com",
+      "1.david.michael+1@gmail.com",
+      "1.david.michael+2@gmail.com"
+    ];
+
+    for (let email of emails) {
+      snsTopic.addSubscription(
+          new subscriptions.EmailSubscription(email)
+      );
+    }
 
     bucket.addEventNotification(s3.EventType.OBJECT_CREATED,
         new s3n.SnsDestination(snsTopic)
-    )
+    );
   }
 }
