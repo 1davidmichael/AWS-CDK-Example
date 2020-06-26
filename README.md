@@ -2,8 +2,8 @@
 
 This is an example CDK project based AWS's [serverless_example]
 
-It was then customized to configure SNS notifications on S3
-object upload.
+It was then customized to configure SQS queue messages and
+am IAM user to retrieve them on S3 object upload.
 
 Usage:
 
